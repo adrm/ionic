@@ -167,6 +167,11 @@ export class Input implements ComponentInterface {
   @Prop() type: TextFieldTypes = 'text';
 
   /**
+   * The id of a `<datalist>` element which provides native autocomplete options to the input.
+   */
+  @Prop() list?: string;
+  
+  /**
    * The value of the input.
    */
   @Prop({ mutable: true }) value?: string | null = '';
@@ -382,6 +387,7 @@ export class Input implements ComponentInterface {
         step={this.step}
         size={this.size}
         type={this.type}
+        list={this.list}
         value={value}
         onInput={this.onInput}
         onBlur={this.onBlur}
